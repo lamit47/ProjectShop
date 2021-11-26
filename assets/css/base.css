@@ -1,0 +1,237 @@
+:root {
+    --primary-color : #EE4D2D;
+    --white-color : #fff;
+    --black-color : #000;
+    --text-color  : #333;
+    --border-color: #dbdbdb;
+    --star-gold-color: #FFCE3E;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    /*font-size: 62.5%; => 1rem=10px  */
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.66667%;
+    max-width: 16.66667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+    max-width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.33333%;
+    max-width: 83.33333%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    position: relative;
+    margin: auto;
+    border-radius: 5px;
+    background-color: var(--white-color);
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+
+/* Button style */
+.btn {
+    min-width: 124px;
+    height: 34px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5rem;
+}
+
+.btn--size-s {
+    height: 32px;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled {
+    cursor: default;
+    background-color:#ccc;
+    color: #ccc;
+}
+
+/* Seclect Input */
+.select-input {
+    height: 34px;
+    min-width: 200px;
+    background-color:var(--white-color);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px; 
+    position: relative;
+    z-index: 1;
+}
+
+.select-input:hover .select-option {
+    display: block;
+}
+
+.select-input__price {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.select-input__price-icon {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+/* Option price*/
+.select-option {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    min-width: 200px;
+    background-color: var(--white-color);
+    list-style: none;
+    padding: 10px 16px;
+    display: none;
+}
+
+.select-option::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    top: -6px;
+    right: 0;
+}
+
+.select-option__item-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    display: block;
+    padding: 8px 0;
+}
+
+.select-option__item-link:hover {
+    color: var(--primary-color);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination__item {
+    margin: 0 12px;
+    border-radius: 2px;
+}
+
+.pagination__item--active .pagination__item-link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination__item--active .pagination__item-link:hover {
+    background-color: #ed5c3f;
+}
+
+.pagination__item-link {
+    --height: 30px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    min-width: 40px;
+    height: var(--height);
+    text-align: center;
+    line-height: var(--height);
+}
+
+.pagination__item-link-icon {
+    font-size: 1.6rem;
+}

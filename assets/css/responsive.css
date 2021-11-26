@@ -1,0 +1,127 @@
+/* Tablet and Mobile */
+@media (max-width: 1023px) {
+    .hide-on-tablet-mobile {
+        display: none;
+    }
+
+    :root {
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .header__cart-list {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        padding: 0 calc(( 100% - 648px ) / 2);
+    }
+
+    .header__cart-list::after {
+        display: none;
+    }
+
+    .container {
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+
+    .header__sort-bar {
+        display: flex;
+    }
+}
+
+/* Tablet */
+@media (min-width:740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+    .header__cart {
+        width: 75px;
+        text-align: right;
+    }
+
+    .footer__text { 
+        margin-left: 30%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .header-mobile-menu {
+        display: block;
+    }
+
+    .header-nav-mobile {
+        display: block;
+    }
+
+    .header__cart, 
+    .header__logo {
+        width: unset;
+    }
+
+    .header-with-search {
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 8px;
+    }
+
+    .header__mobile-search {
+        display: block;
+    }
+
+    .pagination__item {
+        margin: 0;
+    }
+
+    .pagination__item-link {
+        font-size: 1.4rem;
+        min-width: 35px;
+    }
+
+    .container__content {
+        margin: 0;
+    }
+
+    .container__content {
+        padding-top: 8px;
+    }
+
+    .category-mobile {
+        display: block;
+    }
+
+    .header__logo-img {
+        width: 115px;
+    }
+
+    .footer {
+        padding: 0 16px;
+    }
+
+    .footer__text { 
+        margin-left: 14%;
+    }
+
+    .footer-list__apps-link {
+        display: flex;
+        padding: 6px 8px;
+    }
+    
+    .footer-list__heading {
+        font-size: 1.4rem;
+    }
+}
