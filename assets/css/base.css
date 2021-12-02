@@ -77,8 +77,12 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
     animation: fadeIn linear 0.1s;
+    display: none;
+    z-index: 10;
+}
+.modal.open {
+    display: flex;
 }
 .modal__overlay {
     position: absolute;

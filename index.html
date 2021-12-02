@@ -129,12 +129,12 @@
                                 Trợ giúp
                             </a>
                         </li>
-                        <!-- <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng Ký </li>
-                        <li class="header__navbar-item header__navbar-item--strong">Đăng Nhập</li> -->
-                        <li class="header__navbar-item header__navbar-item-user">
+                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng Ký </li>
+                        <li class="header__navbar-item header__navbar-item--strong">Đăng Nhập</li>
+                        <!-- <li class="header__navbar-item header__navbar-item-user">
                             <img src="./assets/img/product.png" alt="" class="header__navbar-item-user-img">
                             <div class="header__navbar-item-user-name">Lâm Nguyễn</div>
-                            <!-- Modal User -->
+                            
                             <ul class="header__navbar-menu">
                                 <li class="header__navbar-menu-item">
                                     <a href="">Tài khoản của tôi</a>
@@ -149,7 +149,7 @@
                                     <a href="">Đăng xuất</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
                 <!-- Header with search -->
@@ -960,12 +960,12 @@
         </footer>
     </div>
     <!-- Modal layout -->
-    <!-- <div class="modal">
+    <div class="modal">
         <div class="modal__overlay"></div>
 
-        <div class="modal__body"> -->
+        <div class="modal__body"> 
             <!-- Register Form -->
-            <!-- <div class="auth-form">
+            <div class="auth-form form-register">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng Ký</h3>
@@ -1008,9 +1008,9 @@
                         </span>
                     </a>
                 </div>
-            </div> -->
+            </div>
             <!-- Login Form -->
-            <!-- <div class="auth-form">
+            <div class="auth-form form-login">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng Nhập</h3>
@@ -1050,8 +1050,30 @@
                         </span>
                     </a>
                 </div>
-            </div> -->
-        <!-- </div>
-    </div> -->
+            </div> 
+        </div>
+    </div>
+
+    <script>
+        const btnLogins = document.querySelectorAll('.header__navbar-item.header__navbar-item--strong');
+        const modal = document.querySelector('.modal');
+        const modalBody = modal.querySelector('.modal__body');
+        console.log(modalBody)
+        function showLogin() {
+            modal.classList.add('open');
+        }
+
+        function hideLogin() {
+            modal.classList.remove('open')
+        }
+        
+        for( const btnLogin of btnLogins) {
+            btnLogin.addEventListener('click',showLogin);
+        }
+        modal.addEventListener('click',hideLogin);
+        modalBody.addEventListener('click',function(event) {
+                event.stopPropagation();
+        })
+    </script>
 </body>
 </html>

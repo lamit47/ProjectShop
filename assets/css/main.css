@@ -460,6 +460,10 @@
     margin: 1px 14px 0;
 }
 
+.auth-form.form-login {
+    display: none;
+}
+
 /* Header with Search */
 .header-with-search {
     height: var(--header-search-height);
